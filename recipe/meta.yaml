@@ -20,7 +20,8 @@ requirements:
     - cmake
     - {{ compiler('cxx') }}
   host:
-    - openblas
+    - openblas # [unix]
+    - mkl # [win]
     - xtensor >=0.20.0,<0.21.0
   run:
     - {{ pin_compatible('xtensor', max_pin='x.x') }}
