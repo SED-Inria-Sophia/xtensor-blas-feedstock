@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win and vc<14]
 
 requirements:
@@ -20,9 +20,7 @@ requirements:
     - cmake
     - {{ compiler('cxx') }}
   host:
-    - libblas
-    - libcblas
-    - liblapack
+    - openblas
     - xtensor >=0.20.0,<0.21.0
   run:
     - {{ pin_compatible('xtensor', max_pin='x.x') }}
